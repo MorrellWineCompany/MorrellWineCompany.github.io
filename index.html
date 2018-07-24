@@ -123,8 +123,8 @@
                 case 'camSRT':
                     campaignInfo.campaign_schedule_run_ts = nonBoolParam;
                     break;
-                case 'email':
-                    email = nonBoolParam;
+               case 'email':
+					email = decodeURIComponent(nonBoolParam);
                     break;
 
 
@@ -166,401 +166,44 @@
 
     });
 </script>
-		
-<style>
-header {
-	background-image: none;
-	background-color: #EEEEEE;
-	height: 30.71px;
-	}
-
-header1{
-	align-content: center;
-	font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, serif;
-	font-style: normal;
-	font-weight: bold;
-	font-size: 21px;
-	text-align: justify;
-	text-decoration: underline;
-	font-variant: normal;
-	}
-
-.headerimg  {
-	height: auto;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 30%;
-	margin-top: 20px;
-	clear: none;
-	float: none;
-}
-
-.PreferenceBotton {
-	float: Center;
-	width: auto;
-	height: auto;
-	align-content: opacity: 1;
-}
-
-.Link{
-	color: #0540FF;
-	margin-left: auto;
-	margin-right: auto;
-	left: Auto;
-	text-align: center;
-	text-decoration: underline;
-}
-
-
-.promotions{
-	cursor: auto;
-	color: #323232;
-	font-family: sans-serif;
-	font-size: 13px;
-	font-weight: normal;
-	line-height: 13px;
-	text-align: center;
-	min-height: 440px;
-	max-height: 440px;
-}
-
-/*TABLE FORMATS*/
-
-.mj-column-per-100{
-	width:100%!important;
-	vertical-align:top;
-	display:inline-block;
-	font-size:0px;
-	line-height:0px;
-	text-align:left;
-	width:100%;
-}
-.mj-column-per-33{
-	width: 33%!important;
-	vertical-align: top;
-	display: inline-block;
-	direction: ltr;
-	font-size: 13px;
-	width: 100%
-	}
-
-.mj-column-per-34{
-	width: 33%!important;
-	vertical-align: top;
-	display: inline-block;
-	direction: ltr;
-	font-size: 13px;
-	width: 100%
-}
-
-.tableleft {
-	width: 100%;
-	border-radius: 40px;
-	-webkit-box-shadow: 6px 5px 6px #CECECE;
-	box-shadow: 6px 5px 6px #CECECE;
-	border-collapse: collapse;
-	min-height: 440px;
-	vertical-align: top;
-	text-align: right;
-}
-.tableright {
-	width: 100%;
-	border-radius: 40px;
-	-webkit-box-shadow: -6px 5px 6px #CECECE;
-	box-shadow: -6px 5px 6px #CECECE;
-	border-collapse: collapse;
-	min-height: 440px;
-	vertical-align: top
-}
-.td{
-	text-align:center;
-	vertical-align:top;
-	direction:ltr;
-	font-size:0px;
-	padding:40px;
-	align: center;
-	word-wrap: break-word;
-	height: 440px;
-}
-
-
-
-/*switches*/
-
-.switch {
-	position: relative;
-	display: inline-block;
-	width: 29px;
-	height: 13px;
-	
-}
-.switch input {
-	display: none;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 13px;
-  width: 13px;
-  left: 3px;
-  bottom: 1px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #2196F3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(12px);
-  -ms-transform: translateX(12px);
-  transform: translateX(12px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}</style>
-		
-	<title>Morrell Email Preference Center</title>
-	<meta content="IE=edge" http-equiv="X-UA-Compatible" />
-	<meta content="text/html; charset = UTF-8" http-equiv="Content-Type" />
-	<meta content="width=device-width, initial-scale=1.0" name="viewport" />
-		
+<script type="text/css">
+    .checkboxes {
+        vertical-align: middle;
+        width: 100px;
+        position: relative;
+    }
+</script>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
-	
-<header></header>
-<body style="background: #FAFAFA;">
-
-<img class="headerimg" src="https://morrellwinecompany.github.io/Morrell_Gold.svg" alt="MorrellLogo"/>
-	
-<!--Left Column-->		
-	<form id="preference_center" onSubmit="submitPreferences(); return false">
-	
-		
-				
-			<div class="mj-column-per-33">
-			
-			<table class="tableleft">
-			  <header1>Promotion Groups</header1>
-			  <tbody>
-			    <tr>
-			      
-			      <td class="td">
-			        <div style="cursor:auto;color:#323232;font-family:sans-serif;font-size:13px;font-weight:normal;line-height:23.4px;text-align:center;">
-			          Special Offers <br />
-			          Free Shipping <br />
-			          Discount Offers <br />
-			          New Releases <br />
-			          Educational Emails <br />
-			          The Cellar Table Blog <br />
-			          Weekly Recap Email <br />
-			          Events/Tastings <br />
-			          
-		            </div>
-		          </td>
-			      <td class="td">
-			        <div style="cursor:auto;color:#323232;font-family:sans-serif;font-size:13px;font-weight:normal;line-height:23.4px;text-align:center;">
-			          
-						<label class="switch">
-						<input title="special_offers" type="checkbox" id="special_offers"> 
-						<span class="slider round"></span></label><br/>
-			          
-						<label class="switch" >
-			            <input title="free_shipping" type="checkbox" id="free_shipping">
-			            <span class="slider round"></span></label><br/>
-			         
-						<label class="switch">
-			            <input title="discount_offers" type="checkbox" id="discount_offers">
-			            <span class="slider round"></span></label><br/>
-			          
-						<label class="switch">
-			            <input title="new_release" type="checkbox" id="new_release">
-			            <span class="slider round"></span></label><br/>
-			         
-						<label class="switch">
-			            <input title="educational_emails" type="checkbox" id="educational_emails">
-			            <span class="slider round"></span></label><br/>
-			          
-						<label class="switch">
-			            <input title="cellar_table_blog" type="checkbox" id="cellar_table_blog">
-			            <span class="slider round"></span></label><br/>
-			         
-						<label class="switch">
-			            <input title="weekly_recap" type="checkbox" id="weekly_recap">
-			            <span class="slider round"></span></label><br/>
-			         
-						<label class="switch">
-			            <input title="events_tastings" type="checkbox" id="events_tastings">
-			           	<span class="slider round"></span></label><br/>
-						
-		            </div>
-		          </td>
-		        </tr>
-		      </tbody>
-			  </table>
-			</div>			
-				
-				
-<!--Center Column-->		
-				
-
-			<div class="mj-column-per-33">
-			<table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
-				<tbody>
-					<tr>
-						<td class="td">
-						<div style="cursor:auto;color:#323232;font-family:sans-serif;font-size:13px;font-weight:normal;line-height:23.4px;text-align:center;">
-						<p>You are on this page because you clicked an <strong>UNSUBSCRIBE</strong> link or a <strong>PREFERENCE CENTER LINK</strong> in one of our emails.<br />
-						We pride ourselves in catering to our customers' wants and needs.<br />
-						<br />
-						Please feel free to adjust the content you will receive from us. Your Preferences are important to us.<br />
-						<br />
-						After you finish, just click the submit button below.<br />
-						</p>
-						</div>
-							 <input id='submit-form' type="submit" value="Submit">
-																				
-							<div style="cursor:auto;color:#323232;font-family:georgia;font-size:13px;font-weight:normal;line-height:23.4px;text-align:center;">
-						<p>However, If you would like us to stop sending you <strong>ALL</strong> offers: Click the link below, and please note that if you click this link, you will no longer recieve any emails from our marketing team.
-						</p>
-						</div>
-						<div style="cursor:auto;color:#323232;font-family:georgia;font-size:13px;font-weight:normal;line-height:23.4px;text-align:center;">
-						<a href="https://list-manager.zaius.com/?action=unsubscribe&payload=Y2FtPSZjYW1HSWQ9MjA1NiZjYW1JZD0wJmNhbVNSVD0wJmNvbj13YWx0ZXJfc2NvdHRfY2hhcmRvbm5heV9mcmVlZG9tX2hpbGxfdmluZXlhcmRfd2lsbGFtZXR0ZV92YWxsZXlfMjAxNV9vcmVnb25faXNudF9qdXN0X2Fib3V0X3Bpbm90X21ha2Vfd2F5X2Zvcl9jaGFyZG9ubmF5JmNvbklkPTAmZW1hPU1XSU5FJTQwSU5TSUdIVFBBUlRORVJTLkNPTSZpZGVudD1kZWZhdWx0JmxzdElkPXJlZF93aW5lJnRwSWQ9MCZ0cmtJZD1pblNHRVJPLS1OVWcxOTBrQVdyNFF3&utm_campaign=&utm_content=walter_scott_chardonnay_freedom_hill_vineyard_willamette_valley_2015_oregon_isnt_just_about_pinot_make_way_for_chardonnay&utm_medium=email&utm_source=zaius">GLOBAL UNSUBSCRIBE</a>
-						</div>
-					  </td>
-					</tr>
-				</tbody>
-			</table>
-			</div>
-			
-				
-<!--Right Column-->						
-				
-				
-			<div class="mj-column-per-34">
-			<table class="tableright">
-				<tbody>
-					<header1>Wine Categories</header1>
-					<tr>
-						<td class="td">
-			        <div style="cursor:auto;color:#323232;font-family:sans-serif;font-size:13px;font-weight:normal;line-height:23.4px;text-align:center;">
-			         France <br />
-			          Bordeaux <br />
-			          Burgundy <br />
-			          Champagne <br />
-			          Rhone <br />
-			          Italy <br />
-			          Piedmont <br />
-			          Tuscany<br />
-						Spain <br />
-						 Germany/Austria <br />
-						 USA <br />
-						 Chardonnay <br />
-						 Pinot Noir <br />
-						 Cabernet &amp Blends <br />
-						 Zinfandel/Syrah<br />
-						Southern Hemisphere <br />
-									
-			          
-		            </div>
-		          </td>
-			      <td class="td">
-			        <div style="cursor:auto;color:#323232;font-family:sans-serif;font-size:13px;font-weight:normal;line-height:23.4px;text-align:center;">
-			          
-						<label class="switch">
-						<input title="france" type="checkbox" id="france"> 
-						<span class="slider round"></span></label><br/>
-			          
-						<label class="switch" >
-			            <input title="bordeaux" type="checkbox" id="bordeaux">
-			            <span class="slider round"></span></label><br/>
-			         
-						<label class="switch">
-			            <input title="burgundy" type="checkbox" id="burgundy">
-			            <span class="slider round"></span></label><br/>
-			          
-						<label class="switch">
-			            <input title="champagne" type="checkbox" id="champagne">
-			            <span class="slider round"></span></label><br/>
-			         
-						<label class="switch">
-			            <input title="rhone" type="checkbox" id="rhone">
-			            <span class="slider round"></span></label><br/>
-			          
-						<label class="switch">
-			            <input title="italy" type="checkbox" id="italy">
-			            <span class="slider round"></span></label><br/>
-			         
-						<label class="switch">
-			            <input title="piedmont" type="checkbox" id="piedmont">
-			            <span class="slider round"></span></label><br/>
-			         
-						<label class="switch">
-			            <input title="tuscany" type="checkbox" id="tuscany">
-			           	<span class="slider round"></span></label><br/>
-						
-						<label class="switch">
-			            <input title="spain" type="checkbox" id="spain">
-			           	<span class="slider round"></span></label><br/>
-						
-						<label class="switch">
-			            <input title="german_austrian" type="checkbox" id="german_austrian">
-			           	<span class="slider round"></span></label><br/>
-						
-						<label class="switch">
-			            <input title="usa" type="checkbox" id="usa">
-			           	<span class="slider round"></span></label><br/>
-						
-						<label class="switch">
-			            <input title="chardonnay" type="checkbox" id="chardonnay">
-			           	<span class="slider round"></span></label><br/>
-						
-						<label class="switch">
-			            <input title="pinot_noir" type="checkbox" id="pinot_noir">
-			           	<span class="slider round"></span></label><br/>
-						
-						<label class="switch">
-			            <input title="cabernet" type="checkbox" id="cabernet">
-			           	<span class="slider round"></span></label><br/>
-						
-						<label class="switch">
-			            <input title="zinfandel_syrrah" type="checkbox" id="zinfandel_syrrah">
-			           	<span class="slider round"></span></label><br/>
-						
-						<label class="switch">
-			            <input title="southern_hemisphere" type="checkbox" id="southern_hemisphere">
-			           	<span class="slider round"></span></label><br/>
-					  </div>
-						</td>
-					</tr>
-				</tbody>
-				</table>
-	</div>
-		</form>
-			</body>
+<body>
+<form id="preference_center" onSubmit="submitPreferences(); return false">
+    <div class="checkboxes">Special Offers<input title="special_offers" type="checkbox"  id="special_offers"></div>
+    <div class="checkboxes">Free Shipping<input title="free_shipping" type="checkbox"  id="free_shipping"></div>
+    <div class="checkboxes">Discount Offers<input title="discount_offers" type="checkbox"  id="discount_offers"></div>
+    <div class="checkboxes">New Release<input title="new_release" type="checkbox"  id="new_release"></div>
+    <div class="checkboxes">Educational Emails<input title="educational_emails" type="checkbox"  id="educational_emails"></div>
+    <div class="checkboxes">Cellar Table Blog<input title="cellar_table_blog" type="checkbox"  id="cellar_table_blog"></div>
+    <div class="checkboxes">Weekly Recap<input title="weekly_recap" type="checkbox"  id="weekly_recap"></div>
+    <div class="checkboxes">Events & Tastings<input title="events_tastings" type="checkbox"  id="events_tastings"></div>
+    <div class="checkboxes">France<input title="france" type="checkbox"  id="france"></div>
+    <div class="checkboxes">Bordeaux<input title="bordeaux" type="checkbox"  id="bordeaux"></div>
+    <div class="checkboxes">Burgundy<input title="burgundy" type="checkbox"  id="burgundy"></div>
+    <div class="checkboxes">Champagne<input title="champagne" type="checkbox"  id="champagne"></div>
+    <div class="checkboxes">Rhone<input title="rhone" type="checkbox"  id="rhone"></div>
+    <div class="checkboxes">Italy<input title="italy" type="checkbox"  id="italy"></div>
+    <div class="checkboxes">Piedmont<input title="piedmont" type="checkbox"  id="piedmont"></div>
+    <div class="checkboxes">Tuscany<input title="tuscany" type="checkbox"  id="tuscany"></div>
+    <div class="checkboxes">Spain<input title="spain" type="checkbox"  id="spain"></div>
+    <div class="checkboxes">Germany & Austria<input title="german_austrian" type="checkbox"  id="german_austrian"></div>
+    <div class="checkboxes">USA<input title="usa" type="checkbox"  id="usa"></div>
+    <div class="checkboxes">Chardonnay<input title="chardonnay" type="checkbox"  id="chardonnay"></div>
+    <div class="checkboxes">Pinot NOir<input title="pinot_noir" type="checkbox"  id="pinot_noir"></div>
+    <div class="checkboxes">Cabernet<input title="cabernet" type="checkbox"  id="cabernet"></div>
+    <div class="checkboxes">Zinfandel & Syrrah<input title="zinfandel_syrrah" type="checkbox"  id="zinfandel_syrrah"></div>
+    <div class="checkboxes">Southern Hemisphere<input title="southern_hemisphere" type="checkbox"  id="southern_hemisphere"></div>
+    <input id='submit-form' type="submit" value="Submit">
+</form>
+</body>
 </html>
