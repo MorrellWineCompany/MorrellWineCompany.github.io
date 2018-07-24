@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+<script type="text/javascript">
+    var zaius = window['zaius']||(window['zaius']=[]);zaius.methods=["initialize","onload","event","entity","identify","anonymize","dispatch"];zaius.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);zaius.push(t);return zaius}};for(var i=0;i<zaius.methods.length;i++){var method=zaius.methods[i];zaius[method]=zaius.factory(method)}(function(){var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src=("https:"===document.location.protocol?"https://":"http://")+"d1igp3oop3iho5.cloudfront.net/v2/inSGERO--NUg190kAWr4Qw/zaius-min.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+
+    var email='';
+
+    function populatePage(){
+
+        var url, queryStringParams, parsedEmail;
+
+        if(!window.location.search){return ''} else {url = window.location.search.substring(1)}
+
+        //Get query string parameters
+        queryStringParams = url.split('&');
+
+        //find 'email=' and return the resultant address
+        for(var i=0; i<queryStringParams.length; i++){
+
+            // if(queryStringParams[i].indexOf('email=') > -1) {
+            //     parsedEmail = queryStringParams[i].split('=')[1];
+            // }
+
+            var paramArray = queryStringParams[i].split('=');
+            var paramName = paramArray[0];
+            var paramValue = (paramArray[1] == 'true');
+            var nonBoolParam = paramArray[1];
+            var campaignInfo = {};
+
+            switch (paramName){
+
+                case 'special_offers':
+                    paramValue === true ? $('#special_offers').attr('checked', 'true') : '';//$('#special_offers').attr('checked', 'false');
+                    break;
+                case 'free_shipping':
+                    paramValue === true ? $('#free_shipping').attr('checked', 'true') : $('#free_shipping').attr('checked', 'false');
+                    break;
+                case 'discount_offers':
+                    paramValue === true ? $('#discount_offers').attr('checked', 'true') : $('#discount_offers').attr('checked', 'false');
+                    break;
+                case 'new_release':
+                    paramValue === true ? $('#new_release').attr('checked', 'true') : $('#new_release').attr('checked', 'false');
+                    break;
+                case 'educational_emails':
+                    paramValue === true ? $('#educational_emails').attr('checked', 'true') : $('#educational_emails').attr('checked', 'false');
+                    break;
+                case 'cellar_table_blog':
+                    paramValue === true ? $('#cellar_table_blog').attr('checked', 'true') : $('#cellar_table_blog').attr('checked', 'false');
+                    break;
+                case 'weekly_recap':
+                    paramValue === true ? $('#weekly_recap').attr('checked', 'true') : $('#weekly_recap').attr('checked', 'false');
+                    break;
+                case 'events_tastings':
+                    paramValue === true ? $('#events_tastings').attr('checked', 'true') : $('#events_tastings').attr('checked', 'false');
+                    break;
+                case 'france':
+                    paramValue === true ? $('#france').attr('checked', 'true') : $('#france').attr('checked', 'false');
+                    break;
+                case 'bordeaux':
+                    paramValue === true ? $('#bordeaux').attr('checked', 'true') : $('#bordeaux').attr('checked', 'false');
+                    break;
+                case 'burgundy':
+                    paramValue === true ? $('#burgundy').attr('checked', 'true') : $('#burgundy').attr('checked', 'false');
+                    break;
+                case 'champagne':
+                    paramValue === true ? $('#champagne').attr('checked', 'true') : $('#champagne').attr('checked', 'false');
+                    break;
+                case 'rhone':
+                    paramValue === true ? $('#rhone').attr('checked', 'true') : $('#rhone').attr('checked', 'false');
+                    break;
+                case 'italy':
+                    paramValue === true ? $('#italy').attr('checked', 'true') : $('#italy').attr('checked', 'false');
+                    break;
+                case 'piedmont':
+                    paramValue === true ? $('#piedmont').attr('checked', 'true') : $('#piedmont').attr('checked', 'false');
+                    break;
+                case 'tuscany':
+                    paramValue === true ? $('#tuscany').attr('checked', 'true') : $('#tuscany').attr('checked', 'false');
+                    break;
+                case 'spain':
+                    paramValue === true ? $('#spain').attr('checked', 'true') : $('#spain').attr('checked', 'false');
+                    break;
+                case 'german_austrian':
+                    paramValue === true ? $('#german_austrian').attr('checked', 'true') : $('#german_austrian').attr('checked', 'false');
+                    break;
+                case 'usa':
+                    paramValue === true ? $('#usa').attr('checked', 'true') : $('#usa').attr('checked', 'false');
+                    break;
+                case 'chardonnay':
+                    paramValue === true ? $('#chardonnay').attr('checked', 'true') : $('#chardonnay').attr('checked', 'false');
+                    break;
+                case 'pinot_noir':
+                    paramValue === true ? $('#pinot_noir').attr('checked', 'true') : $('#pinot_noir').attr('checked', 'false');
+                    break;
+                case 'cabernet':
+                    paramValue === true ? $('#cabernet').attr('checked', 'true') : $('#cabernet').attr('checked', 'false');
+                    break;
+                case 'zinfandel_syrrah':
+                    paramValue === true ? $('#zinfandel_syrrah').attr('checked', 'true') : $('#zinfandel_syrrah').attr('checked', 'false');
+                    break;
+                case 'southern_hemisphere':
+                    paramValue === true ? $('#southern_hemisphere').attr('checked', 'true') : $('#southern_hemisphere').attr('checked', 'false');
+                    break;
+                case 'cam':
+                    campaignInfo.campaign = nonBoolParam;
+                    break;
+                case 'camId':
+                    campaignInfo.campaign_id = nonBoolParam;
+                    break;
+                case 'camGId':
+                    campaignInfo.campaign_group_id = nonBoolParam;
+                    break;
+                case 'con':
+                    campaignInfo.content = nonBoolParam;
+                    break;
+                case 'conId':
+                    campaignInfo.content_id = nonBoolParam;
+                    break;
+                case 'camSRT':
+                    campaignInfo.campaign_schedule_run_ts = nonBoolParam;
+                    break;
+                case 'email':
+                    email = nonBoolParam;
+                    break;
+
+
+
+
+            }
+
+        }
+
+
+
+    }
+
+    function submitPreferences(){
+
+        var subArray = [];
+        var unsubArray = [];
+
+        $("input:checkbox").each(function(){
+            if(this.checked){
+                subArray.push(this.id);
+            } else {
+                unsubArray.push(this.id);
+            }
+        });
+
+        // zaius.event('pageview');
+
+        zaius.subscribe({email: email, list_id: subArray });
+        zaius.unsubscribe({email: email, list_id: unsubArray});
+
+
+    }
+
+    $(document).ready(function(){
+
+        populatePage();
+
+
+    });
+</script>
+<script type="text/css">
+    .checkboxes {
+        vertical-align: middle;
+        width: 100px;
+        position: relative;
+    }
+</script>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="preference_center" target="_blank" onsubmit="try {return window.confirm(&quot;You are submitting information to an external page.\nAre you sure?&quot;);} catch (e) {return false;}">
+    <div class="checkboxes">Special Offers<input title="special_offers" type="checkbox"  id="special_offers"></div>
+    <div class="checkboxes">Free Shipping<input title="free_shipping" type="checkbox"  id="free_shipping"></div>
+    <div class="checkboxes">Discount Offers<input title="discount_offers" type="checkbox"  id="discount_offers"></div>
+    <div class="checkboxes">New Release<input title="new_release" type="checkbox"  id="new_release"></div>
+    <div class="checkboxes">Educational Emails<input title="educational_emails" type="checkbox"  id="educational_emails"></div>
+    <div class="checkboxes">Cellar Table Blog<input title="cellar_table_blog" type="checkbox"  id="cellar_table_blog"></div>
+    <div class="checkboxes">Weekly Recap<input title="weekly_recap" type="checkbox"  id="weekly_recap"></div>
+    <div class="checkboxes">Events & Tastings<input title="events_tastings" type="checkbox"  id="events_tastings"></div>
+    <div class="checkboxes">France<input title="france" type="checkbox"  id="france"></div>
+    <div class="checkboxes">Bordeaux<input title="bordeaux" type="checkbox"  id="bordeaux"></div>
+    <div class="checkboxes">Burgundy<input title="burgundy" type="checkbox"  id="burgundy"></div>
+    <div class="checkboxes">Champagne<input title="champagne" type="checkbox"  id="champagne"></div>
+    <div class="checkboxes">Rhone<input title="rhone" type="checkbox"  id="rhone"></div>
+    <div class="checkboxes">Italy<input title="italy" type="checkbox"  id="italy"></div>
+    <div class="checkboxes">Piedmont<input title="piedmont" type="checkbox"  id="piedmont"></div>
+    <div class="checkboxes">Tuscany<input title="tuscany" type="checkbox"  id="tuscany"></div>
+    <div class="checkboxes">Spain<input title="spain" type="checkbox"  id="spain"></div>
+    <div class="checkboxes">Germany & Austria<input title="german_austrian" type="checkbox"  id="german_austrian"></div>
+    <div class="checkboxes">USA<input title="usa" type="checkbox"  id="usa"></div>
+    <div class="checkboxes">Chardonnay<input title="chardonnay" type="checkbox"  id="chardonnay"></div>
+    <div class="checkboxes">Pinot NOir<input title="pinot_noir" type="checkbox"  id="pinot_noir"></div>
+    <div class="checkboxes">Cabernet<input title="cabernet" type="checkbox"  id="cabernet"></div>
+    <div class="checkboxes">Zinfandel & Syrrah<input title="zinfandel_syrrah" type="checkbox"  id="zinfandel_syrrah"></div>
+    <div class="checkboxes">Southern Hemisphere<input title="southern_hemisphere" type="checkbox"  id="southern_hemisphere"></div>
+    <input id='submit-form' type="submit" value="Submit">
+</form>
+</body>
+</html>
