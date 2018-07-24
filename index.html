@@ -124,7 +124,7 @@
                     campaignInfo.campaign_schedule_run_ts = nonBoolParam;
                     break;
                 case 'email':
-                    email = nonBoolParam;
+                    email = decodeURIComponent(nonBoolParam);
                     break;
 
 
