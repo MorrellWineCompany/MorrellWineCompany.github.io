@@ -226,8 +226,6 @@ header1{
 	vertical-align: top;
 	text-align: right;
 	float: left;
-	Flex:1;
-	display:block;
 	}
 
 	.mj-column-per-33C{
@@ -352,18 +350,25 @@ input:checked + .slider:before {
 	clear: none;
 	float: none;
 		}
-		.mj-column-per-100{float:none;border-spacing: 0 5px;
-    width: 100%;}
-		.mj-column-per-33 {order:2;}
-		.mj-column-per-33C {flaot:none;	width: 100%;!important;}
-			.mj-column-per-34 {flaot:none; width: 100%;!important}
+		.mj-column-per-33 {display:table; float: none; display:block
+        width: 100%!important;}
+		.mj-column-per-33C {display:table-header-group; float: none;
+			width: 100%;!important;position:relative;}
+			.mj-column-per-34 {display:table-footer-group;float: none;
+        width: 100%;!important}
 	}
 	
-		
+	
+	
+	
+	
+	
+	
+	
 
 
 </style>
-	
+
 	<head>
 		
 	<title>Morrell Email Preference Center</title>

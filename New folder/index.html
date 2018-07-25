@@ -152,16 +152,15 @@ header {
 	}
 
 header1{
-	width:100%;
-	text-align:center;
 	font-variant-position: sub;
-	font-family: "Georgia",
+	font-family: Constantia, "Lucida Bright", "DejaVu Serif", Georgia, serif;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 28px;
 	text-decoration: underline;
-	display: block; margin: 0 auto;
-	padding-bottom: 15px;
+	margin-left: 56px;
+	float: left;
+	text-align: left;
 	}
 
 .headerimg  {
@@ -217,43 +216,20 @@ header1{
 }
 .mj-column-per-33{
 	width: 33%!important;
-	min-width:257px!important;
-	border-radius: 40px;
-	-webkit-box-shadow: 6px 5px 6px #CECECE;
-	box-shadow: 6px 5px 6px #CECECE;
-	border-collapse: collapse;
-	min-height: 440px;
-	vertical-align: top;
-	text-align: right;
-	float: left;
-	Flex:1;
-	display:block;
-	}
-
-	.mj-column-per-33C{
-	width: 33%!important;
-		min-width:257px!important;
-	border-radius: 40px;
-	min-height: 440px;
-	vertical-align: top;
-	text-align: right;
-	float: left;
-	}
-	
-.mj-column-per-34{
-	width: 33%!important;
-	min-width: 257px!important;
 	vertical-align: top;
 	display: inline-block;
 	direction: ltr;
 	font-size: 13px;
-	width: 100%;
-	border-radius: 40px;
-	-webkit-box-shadow: -6px 5px 6px #CECECE;
-	box-shadow: -6px 5px 6px #CECECE;
-	border-collapse: collapse;
-	min-height: 440px;
-	vertical-align: top
+	width: 100%
+	}
+
+.mj-column-per-34{
+	width: 33%!important;
+	vertical-align: top;
+	display: inline-block;
+	direction: ltr;
+	font-size: 13px;
+	width: 100%
 }
 
 .tableleft {
@@ -265,8 +241,25 @@ header1{
 	min-height: 440px;
 	vertical-align: top;
 	text-align: right;
+}
+.tableright {
+	width: 100%;
+	border-radius: 40px;
+	-webkit-box-shadow: -6px 5px 6px #CECECE;
+	box-shadow: -6px 5px 6px #CECECE;
+	border-collapse: collapse;
+	min-height: 440px;
+	vertical-align: top
+}
 
-	}
+
+
+
+
+
+
+
+
 .td{
 	text-align:center;
 	vertical-align:top;
@@ -334,36 +327,14 @@ input:checked + .slider:before {
 /* Rounded sliders */
 .slider.round {
   border-radius: 34px;
-	
 }
 
 .slider.round:before {
   border-radius: 50%;
 }
-	
-	@media screen and (max-width: 790px) {
-		.headerimg  {
-	height: auto;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 50%;
-	margin-top: 20px;
-	clear: none;
-	float: none;
-		}
-		.mj-column-per-100{float:none;border-spacing: 0 5px;
-    width: 100%;}
-		.mj-column-per-33 {order:2;}
-		.mj-column-per-33C {flaot:none;	width: 100%;!important;}
-			.mj-column-per-34 {flaot:none; width: 100%;!important}
-	}
-	
-		
-
 
 </style>
-	
+
 	<head>
 		
 	<title>Morrell Email Preference Center</title>
@@ -378,21 +349,21 @@ input:checked + .slider:before {
 
 <img class="headerimg" src="https://morrellwinecompany.github.io/Morrell_Gold.svg" alt="MorrellLogo"/>
 	
-	
+<!--Left Column-->		
 	<form id="preference_center" onSubmit="submitPreferences(); return false">
-	<!--Left Column-->
-		
-			<div class="mj-column-per-33">
+	
+					
+			<div class="mj-column-per-33 mj-column-per-Tablet33 ">
 			
+			<table class="tableleft">
 			
-			
-			
-				  <div><header1>Promotion Groups</header1></div>
-				    
-			    
-			     
+			  <tbody>
+				    <header1>Promotion Groups</header1>
+			    <tr>
+			      
+			      <td class="td">
 					  
-			        <div style="cursor:auto;color:#323232;font-family:sans-serif;font-size:13px;font-weight:normal;line-height:23.4px;text-align:right;width:50%; disply: \block; float:left;">
+			        <div style="cursor:auto;color:#323232;font-family:sans-serif;font-size:13px;font-weight:normal;line-height:23.4px;text-align:center;">
 						
 			          Special Offers <br />
 			          Free Shipping <br />
@@ -403,9 +374,10 @@ input:checked + .slider:before {
 			          Weekly Recap Email <br />
 			          Events/Tastings <br />
 			          
-				</div>
-		        			     
-			        <div style="cursor:auto;color:#323232;font-family:sans-serif;font-size:13px;font-weight:normal;line-height:23.4px;width:50%;text-align:center;width:50%; overflow:hidden; float:right">
+		            </div>
+		          </td>
+			      <td class="td">
+			        <div style="cursor:auto;color:#323232;font-family:sans-serif;font-size:13px;font-weight:normal;line-height:23.4px;text-align:center;">
 			          
 						<label class="switch">
 						<input title="special_offers" type="checkbox" id="special_offers"> 
@@ -440,16 +412,22 @@ input:checked + .slider:before {
 			           	<span class="slider round"></span></label><br/>
 						
 		            </div>
-		      	</div>			
+		          </td>
+		        </tr>
+		      </tbody>
+			  </table>
+			</div>			
 				
 				
 <!--Center Column-->		
 				
 
-			<div class="mj-column-per-33C">
-			
-				
-						<div style="cursor:auto;color:#323232;font-family:sans-serif;font-size:13px;font-weight:normal;line-height:23.4px;text-align:center;padding-left: 15px;padding-right: 15px">
+			<div class="mj-column-per-33 mj-column-per-Tablet33">
+			<table border="0" cellpadding="0" cellspacing="0" role="presentation" style="vertical-align:top;" width="100%">
+				<tbody>
+					<tr>
+						<td class="td">
+						<div style="cursor:auto;color:#323232;font-family:sans-serif;font-size:13px;font-weight:normal;line-height:23.4px;text-align:center;">
 						<p>You are on this page because you clicked an <strong>UNSUBSCRIBE</strong> link or a <strong>PREFERENCE CENTER LINK</strong> in one of our emails.<br />
 						We pride ourselves in catering to our customers' wants and needs.<br />
 						<br />
@@ -458,27 +436,34 @@ input:checked + .slider:before {
 						After you finish, just click the submit button below.<br />
 						</p>
 						</div>
-							 <input type="submit" value="Submit" onclick="window.location.href='http://morrellwine.com'" style="display: block; margin: 0 auto;">																				
-							<div style="cursor:auto;color:#323232;font-family:georgia;font-size:13px;font-weight:normal;line-height:23.4px;text-align:center;padding-left:  15px;padding-right: 15px">
-								
+							 <input id='submit-form' type="submit" value="Submit" onclick="window.location.href='http://morrellwine.com'">
+																				
+							<div style="cursor:auto;color:#323232;font-family:georgia;font-size:13px;font-weight:normal;line-height:23.4px;text-align:center;">
 						<p>However, If you would like us to stop sending you <strong>ALL</strong> offers: Click the link below, and please note that if you click this link, you will no longer recieve any emails from our marketing team.
 						</p>
 						</div>
 						<div style="cursor:auto;color:#323232;font-family:georgia;font-size:13px;font-weight:normal;line-height:23.4px;text-align:center;">
 						<a href="https://list-manager.zaius.com/?action=unsubscribe&payload=Y2FtPSZjYW1HSWQ9MjA1NiZjYW1JZD0wJmNhbVNSVD0wJmNvbj13YWx0ZXJfc2NvdHRfY2hhcmRvbm5heV9mcmVlZG9tX2hpbGxfdmluZXlhcmRfd2lsbGFtZXR0ZV92YWxsZXlfMjAxNV9vcmVnb25faXNudF9qdXN0X2Fib3V0X3Bpbm90X21ha2Vfd2F5X2Zvcl9jaGFyZG9ubmF5JmNvbklkPTAmZW1hPU1XSU5FJTQwSU5TSUdIVFBBUlRORVJTLkNPTSZpZGVudD1kZWZhdWx0JmxzdElkPXJlZF93aW5lJnRwSWQ9MCZ0cmtJZD1pblNHRVJPLS1OVWcxOTBrQVdyNFF3&utm_campaign=&utm_content=walter_scott_chardonnay_freedom_hill_vineyard_willamette_valley_2015_oregon_isnt_just_about_pinot_make_way_for_chardonnay&utm_medium=email&utm_source=zaius">GLOBAL UNSUBSCRIBE</a>
 						</div>
-			
+					  </td>
+					</tr>
+				</tbody>
+			</table>
 			</div>
 			
 				
 <!--Right Column-->						
 				
 				
-			<div class="mj-column-per-34">
+			<div class="mj-column-per-34 mj-column-per-Tablet34">
+			<table class="tableright tablerightTBL">
+				<tbody>
+					
+					<tr>
+						<header1>Wine Categories</header1>
+						<td class="td">
 							
-				<div><header1>Wine Categories</header1></div>
-			
-			        <div style="cursor:auto;color:#323232;font-family:sans-serif;font-size:13px;font-weight:normal;line-height:23.4px;text-align:right;width:50%;overflow:hidden;float:left;">
+			        <div style="cursor:auto;color:#323232;font-family:sans-serif;font-size:13px;font-weight:normal;line-height:23.4px;text-align:center;">
 			         France <br />
 			          Bordeaux <br />
 			          Burgundy <br />
@@ -498,9 +483,9 @@ input:checked + .slider:before {
 									
 			          
 		            </div>
-		      
-			      
-			        <div style="cursor:auto;color:#323232;font-family:sans-serif;font-size:13px;font-weight:normal;line-height:23.4px;text-align:center;width:50%;text-align:center;width:50%;overflow:hidden;overflow:hidden;float:right;">
+		          </td>
+			      <td class="td">
+			        <div style="cursor:auto;color:#323232;font-family:sans-serif;font-size:13px;font-weight:normal;line-height:23.4px;text-align:center;">
 			          
 						<label class="switch">
 						<input title="france" type="checkbox" id="france"> 
