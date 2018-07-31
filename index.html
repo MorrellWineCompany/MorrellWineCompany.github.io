@@ -119,9 +119,11 @@
             }
         }
     }
-    function submitPreferences(){
-        var subArray = [];
-        var unsubArray = [];
+  function submitPreferences(){
+
+        let subArray = [];
+        let unsubArray = [];
+
         $("input:checkbox").each(function(){
             if(this.checked){
                 subArray.push(this.id);
@@ -129,12 +131,63 @@
                 unsubArray.push(this.id);
             }
         });
-        // zaius.event('pageview');
+
         zaius.subscribe({email: email, list_id: subArray });
         zaius.unsubscribe({email: email, list_id: unsubArray});
+
+        return false;
+
+
+
     }
-    $(document).ready(function(){
+
+    function globalUnsub(){
+
+        let unsubObject = Object.assign(campaignInfo, {email: email} );
+
+        let listArray = [];
+
+        $("input:checkbox").each(function(){
+            listArray.push(this.id);
+
+        });
+
+        // zaius.unsubscribe({email: email, list_id:listArray})
+
+
+        let url = 'https://list-manager.zaius.com?action=unsubscribe&list_id=zaius_all';
+        let tracker = '&tracker_id=inSGERO--NUg190kAWr4Qw';
+        let campaign = campaignInfo.campaign ? '&campaign=' + campaignInfo.campaign : '';
+        let camID = campaignInfo.campaign_id ? '&campaign_id=' + campaignInfo.campaign_id : '';
+        let camGID = campaignInfo.campaign_group_id ? '&campaign_group_id=' + campaignInfo.campaign_group_id : '';
+        let email_param = email ? '&email=' + decodeURIComponent(email) : '';
+        let content = campaignInfo.content ? '&content=' + campaignInfo.content : '';
+        let conID = campaignInfo.content_id ? '&content_id=' + campaignInfo.cid : '';
+        let camSRT = campaignInfo.camSRT ? '&campaign_schedule_run_ts=' + campaignInfo.csrt : '';
+        let medium = campaignInfo.utm_medium ? '&medium=' + campaignInfo.utm_medium : '';
+        let unsubURL = url + tracker + email_param + campaign + camID + camGID + content + conID + camSRT;
+        let payload = tracker + email_param + campaign + camID + camGID + content + conID + camSRT;
+
+        return unsubURL;
+
+    }
+
+
+
+    $('document').ready(function(){
         populatePage();
+
+
+        $('#preference_center').submit(function(){
+            submitPreferences();
+            return false;
+        })
+
+        $('#unsub').click(function(){
+            let url = globalUnsub();
+            window.location.replace(url);
+        })
+
     });
 </script>
 		
@@ -511,7 +564,7 @@ input:checked + .slider:before {
 						</p>
 						</div>
 						<div style="cursor:auto;color:#323232;font-family:georgia;font-size:13px;font-weight:normal;line-height:23.4px;text-align:center;">
-						<a href="https://list-manager.zaius.com/?action=unsubscribe&payload=Y2FtPSZjYW1HSWQ9MjA1NiZjYW1JZD0wJmNhbVNSVD0wJmNvbj13YWx0ZXJfc2NvdHRfY2hhcmRvbm5heV9mcmVlZG9tX2hpbGxfdmluZXlhcmRfd2lsbGFtZXR0ZV92YWxsZXlfMjAxNV9vcmVnb25faXNudF9qdXN0X2Fib3V0X3Bpbm90X21ha2Vfd2F5X2Zvcl9jaGFyZG9ubmF5JmNvbklkPTAmZW1hPU1XSU5FJTQwSU5TSUdIVFBBUlRORVJTLkNPTSZpZGVudD1kZWZhdWx0JmxzdElkPXJlZF93aW5lJnRwSWQ9MCZ0cmtJZD1pblNHRVJPLS1OVWcxOTBrQVdyNFF3&utm_campaign=&utm_content=walter_scott_chardonnay_freedom_hill_vineyard_willamette_valley_2015_oregon_isnt_just_about_pinot_make_way_for_chardonnay&utm_medium=email&utm_source=zaius">GLOBAL UNSUBSCRIBE</a>
+						<input id="unsub" type="button" value="Global Unsubscribe"></input>
 						</div>
 			
 			</div>
