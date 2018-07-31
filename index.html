@@ -6,23 +6,31 @@
         crossorigin="anonymous"></script>
 <script type="text/javascript">
     var zaius = window['zaius']||(window['zaius']=[]);zaius.methods=["initialize","onload","event","entity","identify","anonymize","dispatch"];zaius.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);zaius.push(t);return zaius}};for(var i=0;i<zaius.methods.length;i++){var method=zaius.methods[i];zaius[method]=zaius.factory(method)}(function(){var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src=("https:"===document.location.protocol?"https://":"http://")+"d1igp3oop3iho5.cloudfront.net/v2/inSGERO--NUg190kAWr4Qw/zaius-min.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+</script>
+<script type="text/javascript">
+
     var email='';
+    var campaignInfo = {};
+
     function populatePage(){
+
         var url, queryStringParams, parsedEmail;
+
+
         if(!window.location.search){return ''} else {url = window.location.search.substring(1)}
+
         //Get query string parameters
         queryStringParams = url.split('&');
-        //find 'email=' and return the resultant address
+
         for(var i=0; i<queryStringParams.length; i++){
-            // if(queryStringParams[i].indexOf('email=') > -1) {
-            //     parsedEmail = queryStringParams[i].split('=')[1];
-            // }
+
             var paramArray = queryStringParams[i].split('=');
             var paramName = paramArray[0];
             var paramValue = (paramArray[1] == 'true');
             var nonBoolParam = paramArray[1];
-            var campaignInfo = {};
+
             switch (paramName){
+
                 case 'special_offers':
                     paramValue === true ? $('#special_offers').attr('checked', 'true') : '';//$('#special_offers').attr('checked', 'false');
                     break;
@@ -95,31 +103,46 @@
                 case 'southern_hemisphere':
                     paramValue === true ? $('#southern_hemisphere').attr('checked', 'true') : $('#southern_hemisphere').attr('checked', 'false');
                     break;
-                case 'cam':
+                case 'utm_campaign':
                     campaignInfo.campaign = nonBoolParam;
                     break;
-                case 'camId':
+                case 'campaign_id':
                     campaignInfo.campaign_id = nonBoolParam;
                     break;
-                case 'camGId':
+                case 'campaign_group_id':
                     campaignInfo.campaign_group_id = nonBoolParam;
                     break;
-                case 'con':
+                case 'utm_content':
                     campaignInfo.content = nonBoolParam;
                     break;
-                case 'conId':
-                    campaignInfo.content_id = nonBoolParam;
+                case 'utm_medium':
+                    campaignInfo.utm_medium = nonBoolParam;
+                    break;
+                case 'utm_source':
+                    campaignInfo.utm_source = nonBoolParam;
+                    break;
+                case 'content_id':
+                    campaignInfo.cid = nonBoolParam;
                     break;
                 case 'camSRT':
-                    campaignInfo.campaign_schedule_run_ts = nonBoolParam;
+                    campaignInfo.csrt = nonBoolParam;
                     break;
                 case 'email':
                     email = decodeURIComponent(nonBoolParam);
                     break;
+
+
+
+
             }
+
         }
+
+
+
     }
-  function submitPreferences(){
+
+    function submitPreferences(){
 
         let subArray = [];
         let unsubArray = [];
